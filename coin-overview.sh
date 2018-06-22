@@ -1,16 +1,7 @@
 #!/bin/bash
 
-##############
-#Preperations#
-##############
-chmod 755 docker-publish.sh
-docker login -u dalijolijo
-git login -u dalijolijo
-docker pull ubuntu:16.04
-
-
-##########
-#TO BUILD#
+############
+# TO BUILD #
 ############
 # 0 => no  #
 # 1 => yes #
@@ -22,10 +13,17 @@ BUILD_MEC=1
 BUILD_GRV=1
 BUILD_XUEZ=1
 
+################
+# Preperations #
+################
+chmod 755 docker-publish.sh
+docker login -u dalijolijo
+git login -u dalijolijo
+docker pull ubuntu:16.04
 
-###############
-#Bitcore (BTX)#
-###############
+#################
+# Bitcore (BTX) #
+#################
 COIN="BTX"
 IMAGE_D="dalijolijo/btx-rpc-server"
 IMAGE_L="limxtec/btx-rpc-server"
@@ -44,10 +42,9 @@ if [ ${BUILD_BTX} -eq 1 ]; then
   screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
-
-#################
-#Bitcloud (BTDX)#
-#################
+###################
+# Bitcloud (BTDX) #
+###################
 COIN="BTDX"
 IMAGE_D="dalijolijo/btdx-masternode"
 IMAGE_L="limxtec/btdx-masternode"
@@ -66,10 +63,9 @@ if [ ${BUILD_BTDX} -eq 1 ]; then
   screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
-
-###############
-#Bitsend (BSD)#
-###############
+#################
+# Bitsend (BSD) #
+#################
 COIN="BSD"
 IMAGE_D="dalijolijo/bsd-masternode"
 IMAGE_L="limxtec/bsd-masternode"
@@ -88,10 +84,9 @@ if [ ${BUILD_BSD} -eq 1 ]; then
   screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
-
-################
-#Megacoin (MEC)#
-################
+##################
+# Megacoin (MEC) #
+##################
 COIN="MEC"
 IMAGE_D="dalijolijo/mec-rpc-server"
 IMAGE_L="limxtec/mec-rpc-server"
@@ -110,10 +105,9 @@ if [ ${BUILD_MEC} -eq 1 ]; then
   screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
-
-###############
-#Gravium (GRV)#
-###############
+#################
+# Gravium (GRV) #
+#################
 COIN="GRV"
 IMAGE_D="dalijolijo/grv-masternode"
 VER_LATEST="latest"
@@ -128,9 +122,9 @@ if [ ${BUILD_GRV} -eq 1 ]; then
 fi
 
 
-######
-#XUEZ#
-######
+###############
+# XUEZ (XUEZ) #
+###############
 COIN="XUEZ"
 IMAGE_D="dalijolijo/xuez-masternode"
 VERS_LATEST="latest"
@@ -143,4 +137,3 @@ if [ ${BUILD_XUEZ} -eq 1 ]; then
   screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
   screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
 fi
-
