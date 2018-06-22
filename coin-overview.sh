@@ -18,7 +18,6 @@ BUILD_XUEZ=1
 ################
 chmod 755 docker-publish.sh
 docker login -u dalijolijo
-git login -u dalijolijo
 docker pull ubuntu:16.04
 
 #################
@@ -35,11 +34,11 @@ GIT_L="limxtec/Bitcore-BTX-RPC-Installer"
 if [ ${BUILD_BTX} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
   ##LIMXTEC
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
 ###################
@@ -56,11 +55,11 @@ GIT_L="limxtec/BTDX-Masternode-Setup"
 if [ ${BUILD_BTDX} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
   ##LIMXTEC
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
 #################
@@ -77,11 +76,11 @@ GIT_L="limxtec/BSD-Masternode-Setup"
 if [ ${BUILD_BSD} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
   ##LIMXTEC
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
 ##################
@@ -98,11 +97,11 @@ GIT_L="limxtec/Megacoin-MEC-RPC-Installer"
 if [ ${BUILD_MEC} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
   ##LIMXTEC
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
-  screen docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X} ${GIT_L}
 fi
 
 #################
@@ -117,8 +116,8 @@ GIT_D="dalijolijo/GRV-Masternode-Setup"
 if [ ${BUILD_GRV} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
 fi
 
 
@@ -134,6 +133,6 @@ GIT_D="dalijolijo/XUEZ-Masternode-Setup"
 if [ ${BUILD_XUEZ} -eq 1 ]; then
   screen docker pull ${IMAGE_D}
   ##dalijolijo
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
-  screen docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  screen ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X} ${GIT_D}
 fi
