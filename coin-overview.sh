@@ -4,6 +4,7 @@
 #Preperations#
 ##############
 chmod 755 docker-publish.sh
+docker login -u dalijolijo
 docker pull ubuntu:16.04
 
 
@@ -115,7 +116,7 @@ fi
 COIN="GRV"
 IMAGE_D="dalijolijo/grv-masternode"
 VER_LATEST="latest"
-VERSION_X=""
+VERSION_X="1.0.2.1"
 GIT_D="dalijolijo/GRV-Masternode-Setup"
 
 if [ ${BUILD_GRV} -eq 1 ]; then
@@ -132,7 +133,7 @@ fi
 COIN="XUEZ"
 IMAGE_D="dalijolijo/xuez-masternode"
 VERS_LATEST="latest"
-VERSION_X=""
+VERSION_X="1.0.1.9"
 GIT_D="dalijolijo/XUEZ-Masternode-Setup"
 
 if [ ${BUILD_XUEZ} -eq 1 ]; then
