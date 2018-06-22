@@ -19,9 +19,13 @@ cd ${REPO}
 rm -rf ${PROJECT}
 git clone https://github.com/${GIT}.git
 
-# Step 2: Build new local Docker Image
-docker build -t ${IMAGE} .
+# Step 2: Pull latest version
+docker pull ${IMAGE}
 
-# Step 3: Push new Docker Image to DockerHub
-docker push ${IMAGE}
+# Step 3: Build new local Docker Image
+cd ${PROJECT}
+docker build -t ${IMAGE}:${VERSION} .
+
+# Step 4: Push new Docker Image to DockerHub
+docker push ${IMAGE}:${VERSION}
 

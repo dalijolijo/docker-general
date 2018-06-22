@@ -8,5 +8,5 @@ chmod 755 coin-overview.sh
 ```
 Edit `coin-overview.sh` to select the coins and repositories for the update process, and execute...
 ```
-./coin-overview.sh
+screen ./coin-overview.sh
 ```
