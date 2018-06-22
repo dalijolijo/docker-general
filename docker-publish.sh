@@ -1,6 +1,9 @@
 #/bin/bash
 
-# screen docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+###################
+# BUILD NEW IMAGE #
+###################
+
 COIN=$1
 IMAGE=$2
 VERSION=$3
@@ -24,8 +27,9 @@ docker pull ${IMAGE}
 
 # Step 3: Build new local Docker Image
 cd ${PROJECT}
-docker build -t ${IMAGE}:${VERSION} .
+LOCAL=$(echo ${IMAGE} | cut -d "/" -f 2)
+docker build -t ${LOCAL} .
 
 # Step 4: Push new Docker Image to DockerHub
+docker tag ${LOCAL} ${IMAGE}:${VERSION}
 docker push ${IMAGE}:${VERSION}
-
