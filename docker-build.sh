@@ -9,6 +9,7 @@ IMAGE=$2
 VERSION=$3
 GIT=$4
 
+printf "BUILD NEW IMAGE\n"
 printf "Coin: ${COIN}\n"
 printf "Image: ${IMAGE}\n"
 printf "Version: ${VERSION}\n"
@@ -29,7 +30,3 @@ docker pull ${IMAGE}
 cd ${PROJECT}
 LOCAL=$(echo ${IMAGE} | cut -d "/" -f 2)
 docker build -t ${LOCAL} .
-
-# Step 4: Push new Docker Image to DockerHub
-docker tag ${LOCAL} ${IMAGE}:${VERSION}
-docker push ${IMAGE}:${VERSION}
