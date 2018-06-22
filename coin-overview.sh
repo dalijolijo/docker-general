@@ -5,6 +5,7 @@
 ##############
 chmod 755 docker-publish.sh
 docker login -u dalijolijo
+git login -u dalijolijo
 docker pull ubuntu:16.04
 
 
