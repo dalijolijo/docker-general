@@ -44,6 +44,7 @@ docker pull ubuntu:16.04
 # Bitcore (BTX) #
 #################
 COIN="BTX"
+USER=bitcore"
 IMAGE_D="dalijolijo/btx-rpc-server"
 IMAGE_L="limxtec/btx-rpc-server"
 VER_LATEST="latest"
@@ -69,15 +70,18 @@ fi
 
 if [ ${CLEAN_BTX} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
   ##LIMXTEC
-  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VERION_X} ${GIT_L} ${USER}
 fi
 
 ###################
 # Bitcloud (BTDX) #
 ###################
 COIN="BTDX"
+USER=bitcloud"
 IMAGE_D="dalijolijo/btdx-masternode"
 IMAGE_L="limxtec/btdx-masternode"
 VER_LATEST="latest"
@@ -103,15 +107,18 @@ fi
 
 if [ ${CLEAN_BTDX} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
   ##LIMXTEC
-  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VERION_X} ${GIT_L} ${USER}
 fi
 
 #################
 # Bitsend (BSD) #
 #################
 COIN="BSD"
+USER=bitsend"
 IMAGE_D="dalijolijo/bsd-masternode"
 IMAGE_L="limxtec/bsd-masternode"
 VER_LATEST="latest"
@@ -137,15 +144,18 @@ fi
 
 if [ ${CLEAN_BSD} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
   ##LIMXTEC
-  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VERION_X} ${GIT_L} ${USER}
 fi
 
 ##################
 # Megacoin (MEC) #
 ##################
 COIN="MEC"
+USER=megacoin"
 IMAGE_D="dalijolijo/mec-rpc-server"
 IMAGE_L="limxtec/mec-rpc-server"
 VERS_LATEST="latest"
@@ -171,15 +181,18 @@ fi
 
 if [ ${CLEAN_MEC} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
   ##LIMXTEC
-  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VERION_X} ${GIT_L} ${USER}
 fi
 
 #################
 # Gravium (GRV) #
 #################
 COIN="GRV"
+USER=gravium"
 IMAGE_D="dalijolijo/grv-masternode"
 VER_LATEST="latest"
 VERSION_X="1.0.2.1"
@@ -198,13 +211,15 @@ fi
 
 if [ ${CLEAN_GRV} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
 fi
 
 ###############
 # XUEZ (XUEZ) #
 ###############
 COIN="XUEZ"
+USER=xuez"
 IMAGE_D="dalijolijo/xuez-masternode"
 VERS_LATEST="latest"
 VERSION_X="1.0.1.9"
@@ -221,7 +236,8 @@ if [ ${PUBLISH_XUEZ} -eq 1 ]; then
   ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X}
 fi
 
-if [ ${CLEAN_BXUEZ} -eq 1 ]; then
+if [ ${CLEAN_XUEZ} -eq 1 ]; then
   ##dalijolijo
-  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D} ${USER}
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VERION_X} ${GIT_D} ${USER}
 fi
