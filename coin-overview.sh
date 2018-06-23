@@ -19,12 +19,23 @@ PUBLISH_GRV=0
 BUILD_XUEZ=1
 PUBLISH_XUEZ=0
 
+##################
+# CLEANUP SYSTEM #
+##################
+CLEAN_BTX=1
+CLEAN_BTDX=1
+CLEAN_BSD=1
+CLEAN_MEC=1
+CLEAN_GRV=1
+CLEAN_XUEZ=1
+
 ################
 # Preperations #
 ################
 DOCKER_USER="dalijolijo"
 chmod 755 docker-build.sh
 chmod 755 docker-publish.sh
+chmod 755 docker-cleanup.sh
 printf "Login to DockerHub with ${DOCKER_USER}\n"
 docker login -u ${DOCKER_USER}
 docker pull ubuntu:16.04
@@ -56,6 +67,13 @@ if [ ${PUBLISH_BTX} -eq 1 ]; then
   ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X}
 fi
 
+if [ ${CLEAN_BTX} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ##LIMXTEC
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+fi
+
 ###################
 # Bitcloud (BTDX) #
 ###################
@@ -81,6 +99,13 @@ if [ ${PUBLISH_BTDX} -eq 1 ]; then
   ##LIMXTEC
   ./docker-publish.sh ${COIN} ${IMAGE_L} ${VER_LATEST}
   ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X}
+fi
+
+if [ ${CLEAN_BTDX} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ##LIMXTEC
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
 fi
 
 #################
@@ -110,6 +135,13 @@ if [ ${PUBLISH_BSD} -eq 1 ]; then
   ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X}
 fi
 
+if [ ${CLEAN_BSD} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ##LIMXTEC
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+fi
+
 ##################
 # Megacoin (MEC) #
 ##################
@@ -137,6 +169,13 @@ if [ ${PUBLISH_MEC} -eq 1 ]; then
   ./docker-publish.sh ${COIN} ${IMAGE_L} ${VERSION_X}
 fi
 
+if [ ${CLEAN_MEC} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+  ##LIMXTEC
+  ./docker-cleanup.sh ${COIN} ${IMAGE_L} ${VER_LATEST} ${GIT_L}
+fi
+
 #################
 # Gravium (GRV) #
 #################
@@ -155,6 +194,11 @@ if [ ${PUBLISH_GRV} -eq 1 ]; then
   ##dalijolijo
   ./docker-publish.sh ${COIN} ${IMAGE_D} ${VER_LATEST}
   ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X}
+fi
+
+if [ ${CLEAN_GRV} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
 fi
 
 ###############
@@ -177,3 +221,7 @@ if [ ${PUBLISH_XUEZ} -eq 1 ]; then
   ./docker-publish.sh ${COIN} ${IMAGE_D} ${VERSION_X}
 fi
 
+if [ ${CLEAN_BXUEZ} -eq 1 ]; then
+  ##dalijolijo
+  ./docker-cleanup.sh ${COIN} ${IMAGE_D} ${VER_LATEST} ${GIT_D}
+fi
