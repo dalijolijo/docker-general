@@ -38,6 +38,10 @@ chmod 755 docker-publish.sh
 chmod 755 docker-cleanup.sh
 printf "Login to DockerHub with ${DOCKER_USER}\n"
 docker login -u ${DOCKER_USER}
+if [ $? -ne 0 ]; then
+  printf "Wrong password for DockerHub!\n"
+  exit 1
+fi
 docker pull ubuntu:16.04
 
 #################
