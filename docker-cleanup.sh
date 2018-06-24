@@ -33,3 +33,6 @@ rm -rf /home/${USER}
 # Step 4: Remove tagged Docker Images
 docker rmi ${IMAGE}:${VERSION}
 docker rmi ${LOCAL}:${VERSION}
+
+# Step 5: Remove unused (dangling) images
+docker image prune -f
