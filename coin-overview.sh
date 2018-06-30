@@ -52,7 +52,7 @@ USER="bitcore"
 IMAGE_D="dalijolijo/btx-rpc-server"
 IMAGE_L="limxtec/btx-rpc-server"
 VER_LATEST="latest"
-VERSION_X="0.15.0.3"
+VERSION_X="0.15.1.0"
 GIT_D="dalijolijo/Bitcore-BTX-RPC-Installer"
 GIT_L="limxtec/Bitcore-BTX-RPC-Installer"
 
