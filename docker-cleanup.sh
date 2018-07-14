@@ -35,4 +35,5 @@ docker rmi ${IMAGE}:${VERSION}
 docker rmi ${LOCAL}:${VERSION}
 
 # Step 5: Remove unused (dangling) images
+docker ps --filter "status=exited" | grep 'weeks ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm
 docker image prune -f
